@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: setup node.js environment
-        uses: action/setup-node@v2.1.2
+        uses: actions/setup-node@v2.4.0
 
       # Runs a set of commands using the runners shell
       - name: npm install and npm build
@@ -47,7 +47,7 @@ jobs:
           SOURCE_DIR: "dist"
           
       - name: invalidate cloudfront
-        uses: cheta/invalidate-cloudfront-action@v1.3
+        uses: chetan/invalidate-cloudfront-action@v1.3
         env: 
          DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
          PATHS: '/'
